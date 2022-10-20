@@ -1,0 +1,19 @@
+{
+  "name": "hormiga_artesana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariviscomi/hormiga_artesana.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariviscomi/hormiga_artesana/issues"
+  },
+  "homepage": "https://github.com/ariviscomi/hormiga_artesana#readme"
+}
