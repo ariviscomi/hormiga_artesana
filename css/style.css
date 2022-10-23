@@ -7,9 +7,108 @@ html {
   max-width: 100vw;
   font-size: 62.5%;
 }
+html ::-webkit-scrollbar {
+  display: none;
+}
 html body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+html body main {
+  height: 100vh;
+  background-color: #f3e8ee;
+}
+html body header, html body footer {
+  background-color: #293241;
+}
+
+header {
+  height: max-content;
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto, 1fr, auto;
+  grid-template-areas: "burger hLogo carrito";
+  column-gap: 1rem;
+}
+header i {
+  color: #ffffff;
+  font-size: 2rem;
+}
+header #burger {
+  grid-area: burger;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+header #burger .menu_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header #burger .menu_container .menu_link .menu_icon {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+}
+header #burger .menu_container .menu_link .menu_icon span {
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  position: absolute;
+  transform: rotate(0deg);
+  transition: all 0.25s;
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+header #burger .menu_container .menu_link .menu_icon span:nth-child(1) {
+  top: 0;
+}
+header #burger .menu_container .menu_link .menu_icon span:nth-child(2) {
+  top: 9px;
+}
+header #burger .menu_container .menu_link .menu_icon span:nth-child(3) {
+  top: 18px;
+}
+header #burger .menu_container .menu_link:hover span,
+header #burger .menu_container .menu_link:focus span,
+header #burger .menu_container .menu_link:active span {
+  background-color: #a7433a;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5019607843);
+}
+header #burger .menu_container .menu_icon.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 1px;
+  left: 2px;
+}
+header #burger .menu_container .menu_icon.active span:nth-child(2) {
+  opacity: 0;
+}
+header #burger .menu_container .menu_icon.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 22px;
+  left: 2px;
+}
+header #header_logo {
+  grid-area: hLogo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header #header_logo img {
+  height: auto;
+  width: 6.4rem;
+}
+header #carrito {
+  grid-area: carrito;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+footer {
+  height: 10rem;
 }
 
 /*# sourceMappingURL=style.css.map */
