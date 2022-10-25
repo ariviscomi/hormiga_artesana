@@ -23,68 +23,67 @@ header{
         align-items: center;
         justify-content: left;
 
-        .menu_container{
+        nav{
+            display: none;
+        }
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .menu_link{
+            .menu_icon{
+                position: relative;
+                width: 3rem;
+                height: 3rem;
+    
+                span{
+                    display: block;
+                    width: 100%;
+                    height: .2rem;
+                    background-color: nth($paleta, 1);
+                    border-radius: 16px;
+                    position: absolute;
+                    transform: rotate(0deg);
+                    transition: all .25s;
+                    transform-origin: left center;
+                    will-change: transform, opacity;
+                }
 
-            .menu_link{
+                span:nth-child(1){
+                    top: 0;
+                }
 
-                .menu_icon{
-                    position: relative;
-                    width: 3rem;
-                    height: 3rem;
-        
-                    span{
-                        display: block;
-                        width: 100%;
-                        height: .2rem;
-                        background-color: nth($paleta, 1);
-                        border-radius: 16px;
-                        position: absolute;
-                        transform: rotate(0deg);
-                        transition: all .25s;
-                        transform-origin: left center;
-                        will-change: transform, opacity;
-                    }
-    
-                    span:nth-child(1){
-                        top: 0;
-                    }
-    
-                    span:nth-child(2){
-                        top: 9px;
-                    }
-    
-                    span:nth-child(3){
-                        top: 18px;
-                    }
+                span:nth-child(2){
+                    top: 9px;
+                }
+
+                span:nth-child(3){
+                    top: 18px;
                 }
             }
+        }
 
-            .menu_link:hover span,
-            .menu_link:focus span,
-            .menu_link:active span{
-                background-color: nth($paleta, 3);
-                box-shadow: 1px 1px 5px nth($paletaOp, 1);
-            }
+        .menu_link:hover span,
+        .menu_link:active span{
+            background-color: nth($paleta, 3);
+            box-shadow: 1px 1px 10px nth($paleta, 1);
+        }
 
-            .menu_icon.active span:nth-child(1){
-                transform: rotate(45deg);
-                top: 1px;
-                left: 2px;
-            }
+        .menu_icon.active span:nth-child(1){
+            transform: rotate(45deg);
+            top: 1px;
+            left: 2px;
+        }
 
-            .menu_icon.active span:nth-child(2){
-                opacity: 0;
-            }
+        .menu_icon.active span:nth-child(2){
+            opacity: 0;
+        }
 
-            .menu_icon.active span:nth-child(3){
-                transform: rotate(-45deg);
-                top: 22px;
-                left: 2px;
-            }
+        .menu_icon.active span:nth-child(3){
+            transform: rotate(-45deg);
+            top: 22px;
+            left: 2px;
+        }
+
+        .menu_icon.active nav{
+            display: block;
         }
 
     }

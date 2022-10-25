@@ -40,17 +40,15 @@ header #burger {
   align-items: center;
   justify-content: left;
 }
-header #burger .menu_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header #burger nav {
+  display: none;
 }
-header #burger .menu_container .menu_link .menu_icon {
+header #burger .menu_link .menu_icon {
   position: relative;
   width: 3rem;
   height: 3rem;
 }
-header #burger .menu_container .menu_link .menu_icon span {
+header #burger .menu_link .menu_icon span {
   display: block;
   width: 100%;
   height: 0.2rem;
@@ -62,33 +60,35 @@ header #burger .menu_container .menu_link .menu_icon span {
   transform-origin: left center;
   will-change: transform, opacity;
 }
-header #burger .menu_container .menu_link .menu_icon span:nth-child(1) {
+header #burger .menu_link .menu_icon span:nth-child(1) {
   top: 0;
 }
-header #burger .menu_container .menu_link .menu_icon span:nth-child(2) {
+header #burger .menu_link .menu_icon span:nth-child(2) {
   top: 9px;
 }
-header #burger .menu_container .menu_link .menu_icon span:nth-child(3) {
+header #burger .menu_link .menu_icon span:nth-child(3) {
   top: 18px;
 }
-header #burger .menu_container .menu_link:hover span,
-header #burger .menu_container .menu_link:focus span,
-header #burger .menu_container .menu_link:active span {
+header #burger .menu_link:hover span,
+header #burger .menu_link:active span {
   background-color: #a7433a;
-  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5019607843);
+  box-shadow: 1px 1px 10px #ffffff;
 }
-header #burger .menu_container .menu_icon.active span:nth-child(1) {
+header #burger .menu_icon.active span:nth-child(1) {
   transform: rotate(45deg);
   top: 1px;
   left: 2px;
 }
-header #burger .menu_container .menu_icon.active span:nth-child(2) {
+header #burger .menu_icon.active span:nth-child(2) {
   opacity: 0;
 }
-header #burger .menu_container .menu_icon.active span:nth-child(3) {
+header #burger .menu_icon.active span:nth-child(3) {
   transform: rotate(-45deg);
   top: 22px;
   left: 2px;
+}
+header #burger .menu_icon.active nav {
+  display: block;
 }
 header #header_logo {
   grid-area: hLogo;
