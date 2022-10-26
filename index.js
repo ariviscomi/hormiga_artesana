@@ -16,7 +16,7 @@ navWrapper.addEventListener("click", e => {
 });
 
 //TODO ====================================== Carrito de Compra ====================================== TODO//
-/*
+
 let continuar = true;                          	//Condicion de salida del ciclo
 let carrito = 0, prod, decision;               	//Variables enteras
 let vProductos = [1000, 1500, 2000, 1600];     	//Vector de precios de productos
@@ -161,5 +161,3 @@ while (continuar === true) {
 }
 
 alert(nombre + ",\nGracias por su compra!\n" + listarProd(vContador) + "\n\nEl Total fue de: $" + carrito);
-
-*/
