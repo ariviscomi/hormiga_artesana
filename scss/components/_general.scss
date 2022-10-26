@@ -12,8 +12,15 @@ html{
     }
 
     body{
-        display: grid;
+		display: grid;
         grid-template-rows: auto 1fr auto;
+
+		font-family: 'Roboto';
+		
+		a{
+			color:white;
+			text-decoration: none;
+		}
 
         main{
             height: 100vh;
