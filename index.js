@@ -17,15 +17,6 @@ navWrapper.addEventListener("click", e => {
 
 //TODO ====================================== Carrito de Compra ====================================== TODO//
 
-let continuar = true;                          	//Condicion de salida del ciclo
-let carrito = 0, prod, decision;               	//Variables enteras
-let vProductos = [1000, 1500, 2000, 1600];     	//Vector de precios de productos
-let vStock = [5, 2, 0, 7];							//Stock de productos
-let vContador = [];                            	//Contador de productos agregados al carrito
-
-vectorCero(vContador, 4);                       	//Inicia en cero el contenido del vector
-console.log("cantidad comprada:", vContador);
-
 const vectorCero = (vector, initial) => {
 
 	for (let i = 0; i < initial; i++) {
@@ -106,6 +97,16 @@ const listarProd = (vector) => {
 
 	return lista;
 }
+
+let continuar = true;                          	//Condicion de salida del ciclo
+let carrito = 0, prod, decision;               	//Variables enteras
+let vProductos = [1000, 1500, 2000, 1600];     	//Vector de precios de productos
+let vStock = [5, 2, 0, 7];							//Stock de productos
+let vContador = [];                            	//Contador de productos agregados al carrito
+
+vectorCero(vContador, 4);                       	//Inicia en cero el contenido del vector
+console.log("cantidad comprada:", vContador);
+
 
 const nombre = iniciarSesion();
 
