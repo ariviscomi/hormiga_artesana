@@ -34,6 +34,16 @@ html body main {
 html body header, html body footer {
   background-color: #293241;
 }
+html body .btn_transparent {
+  background-color: transparent;
+  padding: 0.5rem;
+  transition-duration: 0.4s;
+  border: none;
+}
+html body .btn_transparent:hover,
+html body .btn_transparent:focus {
+  text-shadow: 0 0px 10px white;
+}
 
 .main_header .main_nav {
   position: fixed;
@@ -46,7 +56,7 @@ html body header, html body footer {
   width: 100vw;
   margin-left: -100%;
   transition: all 0.2s linear;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5019607843);
 }
 .main_header .main_nav .nav_links {
   display: flex;
@@ -74,7 +84,10 @@ html body header, html body footer {
 }
 .main_header .main_nav.show {
   margin-left: 0;
-  background-color: rgba(0, 0, 0, 0.5019607843);
+}
+.main_header #cart_button {
+  position: relative;
+  z-index: 200;
 }
 .main_header .button_menu {
   position: relative;
@@ -102,13 +115,16 @@ html body header, html body footer {
 .main_header .button_menu.close span:nth-child(1) {
   opacity: 1;
   transform: rotate(45deg) translate(0px, 0px);
-  background: #ffffff;
 }
 .main_header .button_menu.close span:nth-child(3) {
   transform: rotate(-45deg) translate(-15px, 10px);
 }
 .main_header .button_menu.close span:nth-child(2) {
   display: none;
+}
+.main_header .button_menu:hover span,
+.main_header .button_menu:focus span {
+  box-shadow: 0 0 5px white;
 }
 
 /*
@@ -157,6 +173,13 @@ header #head_logo {
   justify-content: center;
   align-items: center;
 }
+header #head_logo img {
+  border-radius: 50%;
+}
+header #head_logo a:hover img {
+  transition-duration: 1s;
+  box-shadow: 0 0 5px rgba(167, 67, 58, 0.5019607843), 1px 1px 20px rgba(255, 255, 255, 0.5019607843);
+}
 header #head_burger {
   grid-area: hburger;
   display: flex;
@@ -169,7 +192,7 @@ header #head_cart {
   justify-content: flex-end;
   align-items: flex-end;
 }
-header #head_cart i {
+header #head_cart button i {
   font-size: 3.2rem;
 }
 header i {

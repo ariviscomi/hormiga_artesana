@@ -1,5 +1,4 @@
 .main_header {
-
 	.main_nav {
 		position: fixed;
 		top: 0;
@@ -13,8 +12,7 @@
 		width: 100vw;
 		margin-left: -100%;
 		transition: all 0.2s linear;
-
-		background-color: transparent;
+		background-color: #00000080;
 		
 		.nav_links {
 			display: flex;
@@ -47,13 +45,19 @@
 				}
 			}
 		}
+
 	}
 	
 	.main_nav.show {
 		margin-left: 0;
-		background-color: #00000080;
 	}
 	
+	#cart_button{
+
+		position: relative;
+		z-index: 200;
+	}
+
 	.button_menu {
 		position: relative;
 		z-index: 200;
@@ -83,11 +87,11 @@
 			border-radius: 3px;
 		}
 	}
+
 	
 	.button_menu.close span:nth-child(1) {
 		opacity: 1;
 		transform: rotate(45deg) translate(0px, 0px);
-		background: #ffffff;
 	}
 	
 	.button_menu.close span:nth-child(3) {
@@ -96,6 +100,13 @@
 	
 	.button_menu.close span:nth-child(2) {
 		display: none;
+	}
+	
+	.button_menu:hover,
+	.button_menu:focus{
+		span{
+			box-shadow: 0 0 5px white;
+		}
 	}
 }
 /*
