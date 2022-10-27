@@ -3,10 +3,26 @@ footer{
 	padding: 1rem 2rem;
 
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	color: nth($paleta,1);
+	background-image: url('../images/hormiguita.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	
+	#footer_contact{
+		width: 100%;
+	}
 
 	a{
 		font-size: 3.2rem;
 		margin-right: 1rem;
+	}
+
+	span{
+		font-size: 2.4rem;
+		text-decoration:underline;
 	}
 }

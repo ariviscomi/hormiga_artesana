@@ -12,19 +12,28 @@ html{
     }
 
     body{
+		min-height: 100vh;
 		display: grid;
         grid-template-rows: auto 1fr auto;
 
 		font-family: 'Roboto';
+		background-color: nth($paleta,2);
 		
 		a{
-			color:white;
+			color:nth($paleta,1);
 			text-decoration: none;
 		}
 
         main{
-            height: 100vh;
-            background-color: nth($paleta,2);
+            min-height: min-content;
+			height: 700px;
+
+			padding-bottom: 1rem;
+
+			background-image: url('../images/montaña-izq.png'), url('../images/montaña-der.png');
+			background-repeat: no-repeat;
+			background-position:bottom;
+			background-size: contain;
         }
 
         header, footer{

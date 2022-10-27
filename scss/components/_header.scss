@@ -2,6 +2,9 @@ header{
     height: max-content;
     padding: 1rem;
 
+	margin-bottom: 1rem;
+	box-shadow: 1px 0 10px nth($paleta, 4);
+
 	display: grid;
 	
 	grid-template-columns: auto 1fr auto;

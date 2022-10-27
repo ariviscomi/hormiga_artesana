@@ -20,17 +20,19 @@
 			display: flex;
 			flex-direction: column;
 			
-			width: 70%;
+			min-width: max-content;
+			width: 65%;
 			height: 100vh;
 
 			padding-top: 30%;
 			padding-left: 2rem;
+			padding-right: 3.2rem;
 			
 			background-color: nth($paleta, 4);
 			
 			.link_item {
 				color: #ffffff;
-				font-size: 3.2rem;
+				font-size: 2.4rem;
 				text-decoration: none;
 				font-weight: medium;
 
@@ -40,7 +42,7 @@
 				border-bottom: 1px solid black;
 
 				i{
-					font-size: 3.2rem;
+					font-size: 2.4rem;
 					margin-right: 1rem;
 				}
 			}
@@ -49,7 +51,7 @@
 	
 	.main_nav.show {
 		margin-left: 0;
-		background-color: #0000008f;
+		background-color: #00000080;
 	}
 	
 	.button_menu {
