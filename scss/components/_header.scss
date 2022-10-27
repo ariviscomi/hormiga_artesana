@@ -19,17 +19,6 @@ header{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
-		img{
-			border-radius: 50%;
-		}
-		
-		a:hover{
-			img{
-				transition-duration: 1s;
-				box-shadow: 0 0 5px nth($paletaOp, 3), 1px 1px 20px nth($paletaOp,1);
-			}
-		}
 	}
 
 	#head_burger{
@@ -47,7 +36,7 @@ header{
 		justify-content: flex-end;
 		align-items:flex-end;
 
-		button i{
+		i{
 			font-size: 3.2rem;
 		}
 	}

@@ -1,9 +1,7 @@
 //TODO ====================================== Menu Hamburguesa ====================================== TODO//
 
 const toggleButton = document.getElementById("button_menu");
-const navWrapper = document.getElementById("nav_menu");
-const cartButton = document.getElementById("cart_button");
-const cartWrapper = document.getElementById("cart_nav");
+const navWrapper = document.getElementById("nav");
 
 toggleButton.addEventListener("click", () => {
 	toggleButton.classList.toggle("close");
@@ -11,24 +9,14 @@ toggleButton.addEventListener("click", () => {
 });
 
 navWrapper.addEventListener("click", e => {
-	if (e.target.id === "nav_menu") {
+	if (e.target.id === "nav") {
 		navWrapper.classList.remove("show");
 		toggleButton.classList.remove("close");
 	}
-});
-
-cartButton.addEventListener("click", () => {
-	cartWrapper.classList.toggle("show");
-});
-
-navWrapper.addEventListener("click", e => {
-	if (e.target.id === "nav_menu") {
-		cartWrapper.classList.remove("show");
-	}
-});
+}); 
 
 //TODO ====================================== Carrito de Compra ====================================== TODO//
-/* 
+
 const vectorCero = (vector, initial) => {
 
 	for (let i = 0; i < initial; i++) {
@@ -174,4 +162,3 @@ while (continuar === true) {
 }
 
 alert(nombre + ",\nGracias por su compra!\n" + listarProd(vContador) + "\n\nEl Total fue de: $" + carrito);
- */

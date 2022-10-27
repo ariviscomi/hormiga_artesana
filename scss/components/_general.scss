@@ -39,17 +39,5 @@ html{
         header, footer{
             background-color: nth($paleta, 4);
         }
-
-		.btn_transparent{
-			background-color: transparent;
-			padding: 0.5rem;
-			transition-duration: 0.4s;
-			border: none;
-		}
-
-		.btn_transparent:hover,
-		.btn_transparent:focus {
-			text-shadow: 0 0px 10px white;
-		}
     }
 }
