@@ -1,4 +1,4 @@
-//TODO ====================================== Menu Hamburguesa ====================================== TODO//
+//* ====> Menu Hamburguesa
 
 const toggleButton = document.getElementById("button_menu");
 const navWrapper = document.getElementById("nav");
@@ -15,8 +15,8 @@ navWrapper.addEventListener("click", e => {
 	}
 }); 
 
-//TODO ====================================== Carrito de Compra ====================================== TODO//
-
+//* ====> Carrito de Compra
+/*
 const vectorCero = (vector, initial) => {
 
 	for (let i = 0; i < initial; i++) {
@@ -162,3 +162,4 @@ while (continuar === true) {
 }
 
 alert(nombre + ",\nGracias por su compra!\n" + listarProd(vContador) + "\n\nEl Total fue de: $" + carrito);
+*/

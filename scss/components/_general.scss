@@ -19,10 +19,6 @@ html{
 		font-family: 'Roboto';
 		background-color: nth($paleta,2);
 		
-		a{
-			color:nth($paleta,1);
-			text-decoration: none;
-		}
 
         main{
             min-height: min-content;
@@ -39,5 +35,49 @@ html{
         header, footer{
             background-color: nth($paleta, 4);
         }
+
+		.linkStyle{
+			a,i{
+				color:nth($paleta,1);
+				text-decoration: none;
+				border: none;
+			}
+		}
+
+		.linkStyle:hover{
+			text-shadow: 0 0 10px nth($paleta, 1);
+			cursor: pointer;
+		}
+
+		.btn_clear{
+			background-color: transparent;
+			border: none;
+
+			transition: all linear 0.4s;
+		}
+
+		.btn_solid{
+			background-color: nth($paleta,3);
+			color: nth($paleta,1);
+			border-radius: 5px;
+			font-weight: bold;
+		}
+
+		.btn_solid:hover,
+		.btn_solid:focus{
+			box-shadow: 1px 1px 2px nth($paleta,5);
+		}
+
+		.btn_solid:hover,
+		.btn_solid:focus,
+		.btn_clear:focus,
+		.btn_clear:hover{
+			text-shadow: 0 0 10px nth($paleta, 1);
+			cursor: pointer;
+			color: nth($paleta,1);
+			span{
+				box-shadow: 0 0 5px nth($paleta, 1);
+			}
+		}
     }
 }

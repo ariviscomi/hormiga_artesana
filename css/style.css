@@ -18,10 +18,6 @@ html body {
   font-family: "Roboto";
   background-color: #f3e8ee;
 }
-html body a {
-  color: #ffffff;
-  text-decoration: none;
-}
 html body main {
   min-height: min-content;
   height: 700px;
@@ -33,6 +29,44 @@ html body main {
 }
 html body header, html body footer {
   background-color: #293241;
+}
+html body .linkStyle a, html body .linkStyle i {
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+}
+html body .linkStyle:hover {
+  text-shadow: 0 0 10px #ffffff;
+  cursor: pointer;
+}
+html body .btn_clear {
+  background-color: transparent;
+  border: none;
+  transition: all linear 0.4s;
+}
+html body .btn_solid {
+  background-color: #a7433a;
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+html body .btn_solid:hover,
+html body .btn_solid:focus {
+  box-shadow: 1px 1px 2px #000000;
+}
+html body .btn_solid:hover,
+html body .btn_solid:focus,
+html body .btn_clear:focus,
+html body .btn_clear:hover {
+  text-shadow: 0 0 10px #ffffff;
+  cursor: pointer;
+  color: #ffffff;
+}
+html body .btn_solid:hover span,
+html body .btn_solid:focus span,
+html body .btn_clear:focus span,
+html body .btn_clear:hover span {
+  box-shadow: 0 0 5px #ffffff;
 }
 
 .main_header .main_nav {
@@ -51,8 +85,7 @@ html body header, html body footer {
 .main_header .main_nav .nav_links {
   display: flex;
   flex-direction: column;
-  min-width: max-content;
-  width: 65%;
+  width: 60%;
   height: 100vh;
   padding-top: 30%;
   padding-left: 2rem;
@@ -72,9 +105,13 @@ html body header, html body footer {
   font-size: 2.4rem;
   margin-right: 1rem;
 }
+.main_header .main_nav .nav_links .link_item:hover,
+.main_header .main_nav .nav_links .link_item:focus {
+  text-shadow: 0 0 10px #ffffff;
+}
 .main_header .main_nav.show {
   margin-left: 0;
-  background-color: rgba(0, 0, 0, 0.5019607843);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .main_header .button_menu {
   position: relative;
@@ -101,13 +138,15 @@ html body header, html body footer {
 }
 .main_header .button_menu.close span:nth-child(1) {
   opacity: 1;
-  transform: rotate(45deg) translate(0px, 0px);
+  transform: rotate(45deg) translate(-5px, -10px);
   background: #ffffff;
-}
-.main_header .button_menu.close span:nth-child(3) {
-  transform: rotate(-45deg) translate(-15px, 10px);
+  width: 5rem;
 }
 .main_header .button_menu.close span:nth-child(2) {
+  transform: rotate(-45deg) translate(0px, 0px);
+  width: 5rem;
+}
+.main_header .button_menu.close span:nth-child(3) {
   display: none;
 }
 
@@ -156,6 +195,14 @@ header #head_logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+header #head_logo img {
+  border-radius: 50%;
+  transition: all linear 0.5s;
+}
+header #head_logo:hover img {
+  box-shadow: 0px 0px 10px rgba(167, 67, 58, 0.5019607843), 1px 1px 10px #ffffff;
 }
 header #head_burger {
   grid-area: hburger;
@@ -171,6 +218,52 @@ header #head_cart {
 }
 header #head_cart i {
   font-size: 3.2rem;
+}
+header #head_cart .offcanvas {
+  background-color: #f3e8ee;
+}
+header #head_cart .offcanvas .offcanvas-header {
+  background-color: #293241;
+}
+header #head_cart .offcanvas .offcanvas-header .btn_close {
+  padding-right: 1.5rem;
+}
+header #head_cart .offcanvas .offcanvas-header .btn_close i {
+  font-size: 2rem;
+}
+header #head_cart .offcanvas .cart_footer {
+  border-top: 1px dotted rgba(167, 67, 58, 0.5019607843);
+  padding-top: 1rem;
+}
+header #head_cart .offcanvas .cart_item {
+  border: 1px solid rgba(167, 67, 58, 0.5019607843);
+  min-height: 10rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+}
+header #head_cart .offcanvas .cart_item span {
+  color: #000000;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 1px 1px 5px rgba(41, 50, 65, 0.5019607843);
+}
+header #head_cart .offcanvas .cart_item:hover,
+header #head_cart .offcanvas .cart_item:focus-visible {
+  box-shadow: 1px 1px 5px #293241;
+}
+header #head_cart .offcanvas i, header #head_cart .offcanvas span {
+  color: #ffffff;
+}
+header #head_cart .offcanvas .btn {
+  min-width: min-content;
+  height: auto;
+  min-height: 3.2rem;
+  font-size: 1.8rem;
+  font-weight: normal;
 }
 header i {
   color: #ffffff;

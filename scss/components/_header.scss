@@ -19,6 +19,19 @@ header{
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		img{
+			border-radius: 50%;
+			transition: all linear 0.5s;
+		}
+
+		cursor: pointer;
+	}
+
+	#head_logo:hover{
+		img{
+			box-shadow: 0px 0px 10px nth($paletaOp,3), 1px 1px 10px nth($paleta,1);
+		}
 	}
 
 	#head_burger{
@@ -38,6 +51,65 @@ header{
 
 		i{
 			font-size: 3.2rem;
+		}
+
+		.offcanvas{
+
+			background-color: nth($paleta,2);
+
+			.offcanvas-header{
+				background-color: nth($paleta,4);
+
+				.btn_close{
+					padding-right: 1.5rem;
+
+					i{
+						font-size: 2rem;
+					}
+				}
+			}
+
+			.cart_footer{
+				border-top: 1px dotted nth($paletaOp,3);
+				padding-top: 1rem;
+			}
+
+			.cart_item{
+				border: 1px solid nth($paletaOp,3);
+				min-height: 10rem;
+				background-color: nth($paleta,1);
+				border-radius: 5px;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				transition-duration: 0.2s;
+
+				span{
+					color: nth($paleta,5);
+					font-weight: bold;
+					font-size: 2rem;
+					text-shadow: 1px 1px 5px nth($paletaOp,4);
+				}
+			}
+
+			.cart_item:hover,
+			.cart_item:focus-visible{
+				box-shadow: 1px 1px 5px nth($paleta,4);
+			}
+
+			i,span{
+				color: nth($paleta,1);
+			}
+
+			.btn{
+				min-width: min-content;
+				height: auto;
+				min-height: 3.2rem;
+				font-size: 1.8rem;
+				font-weight: normal;
+			}
 		}
 	}
 
