@@ -61,6 +61,7 @@ html{
 			color: nth($paleta,1);
 			border-radius: 5px;
 			font-weight: bold;
+			padding: 0.5rem;
 		}
 
 		.btn_solid:hover,
@@ -77,6 +78,47 @@ html{
 			color: nth($paleta,1);
 			span{
 				box-shadow: 0 0 5px nth($paleta, 1);
+			}
+		}
+
+		#prod_Container{
+			display: flex;
+			flex-wrap: wrap;
+			padding: 2rem;		
+
+			.prod_Card{
+				min-height:max-content;
+				width: 20rem;
+				padding: 1rem;
+				margin: 0.5rem;
+				border-radius: 1rem;
+				border: 1px solid nth($paleta,4);
+				background-color: nth($paleta,1);
+	
+				display: grid;
+				grid-template-rows: repeat(5,auto);
+				justify-content: center;
+				align-items: center;
+	
+				row-gap: 1rem;
+				
+				div{
+					width: 100%;
+					display: flex;
+					justify-content: center;
+
+					text-align: justify;
+	
+					img{
+						height: 200px;
+						width: 200px;
+						transition-duration: 0.4s;
+					}
+	
+					img:hover{
+						box-shadow: 1px 1px 10px nth($paleta,5);
+					}
+				}
 			}
 		}
     }

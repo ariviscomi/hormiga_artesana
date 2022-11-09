@@ -13,153 +13,125 @@ navWrapper.addEventListener("click", e => {
 		navWrapper.classList.remove("show");
 		toggleButton.classList.remove("close");
 	}
-}); 
+});
 
-//* ====> Carrito de Compra
-/*
-const vectorCero = (vector, initial) => {
+//* ====> Objetos
 
-	for (let i = 0; i < initial; i++) {
-
-		vector[i] = 0;
-	}
-
-	let j;
-
-	for (let i = 0; i < initial; i++) {
-
-		j = i + 1;
-		console.log("elemento " + j + ": " + vector[i]);
+class user {
+	constructor(userName, userPassword, userCart) {
+		this.name = userName;
+		this.pass = userPassword;
+		this.cart = userCart;
+		this.saludo = function () { alert("Bienveni@\n            " + this.name) };
 	}
 }
 
-const iniciarSesion = () => {
-	let nombre, salida;
+const user1 = new user("Florencia", "Flor.2022", 0);
+const user2 = new user("Ariel", "Contraseña123", 0);
+const user3 = new user("Profesor", "Coder123", 0);
 
-	alert("Para continuar inicie sesion!");
+const USERS = [
+	user1,
+	user2,
+	user3
+];
+
+class product {
+	constructor(id, title, description, price, stock) {
+		this.id = id;
+		this.title = title;
+		this.desc = description;
+		this.price = price;
+		this.stock = stock;
+	}
+}
+
+const prod1 = new product(1, "Mate Montañas", "Mate de algarrobo con diseño de montañas", 500, 4);
+const prod2 = new product(2, "Mate Futbol", "Mate de algarrobo con escudo de equipo de futbol a eleccion", 600, 7);
+const prod3 = new product(3, "Mate Clean", "Mate de algarrobo barnizado al natural", 400, 5);
+const prod4 = new product(4, "Mate Minimal", "Mate de algarrobo con diseño minimalista", 450, 8);
+const prod5 = new product(5, "Mate Mandala", "Mate de algarrobo con diseño de Mandalas", 500, 7);
+const prod6 = new product(6, "Mate Pets", "Mate de algarrobo con diseño de tu mascota", 650, 3);
+
+const PRODS = [
+	prod1,
+	prod2,
+	prod3,
+	prod4,
+	prod5,
+	prod6
+];
+
+const searchObj = (objList, element, attr) => {	//Buscar Objetos en una lista
+	let e, found = null;
+	for (let i = 0; i < objList.length; i++) {
+		e = objList[i];
+		if (element === e[attr]) {
+			found = e;
+			console.log(found);
+			break;
+		}
+	}
+	return found;
+}
+
+//* ====> Iniciar sesion
+
+function logIn() {
+
+	let notApproved, dat, us;
+
+	alert("Debes iniciar sesion primero!");
+	do {
+		notApproved = false
+		dat = prompt("Pon tu usuario:");
+		us = searchObj(USERS, dat, "name")
+		if (us === null) {
+			notApproved = true;
+			alert("No Existe un usuario con este nombre!");
+		}
+	} while (notApproved)
 
 	do {
-		nombre = prompt("Ingrese su nombre:");
+		notApproved = false
+		dat = prompt(us.name + "\n    Por favor, pon tu contraseña:");
 
-		if ((nombre != "") && ((nombre.toLowerCase() === "ariel") || (nombre.toLowerCase() === "damian") || (nombre.toLowerCase() === "florencia") || (nombre.toLowerCase() === "valentina"))) {
-
-			alert("Bienvenid@" + nombre + "!!");
-			salida = false;
+		if (us.pass != dat) {
+			notApproved = true;
+			alert("Contraseña incorrecta!");
 		}
-		else if (nombre == "") {
-			alert("No ingresaste ningun nombre!");
-			salida = true;
-		}
-		else {
-			alert("No existe un usuario con ese nombre!");
-			salida = true;
-		}
+	} while (notApproved)
 
-	} while (salida)
-
-	return nombre
+	us.saludo;
+	return us;
 }
 
-const validarProd = (prod, stock, indice) => {
+const us = logIn();
 
-	if ((prod > 0 && prod <= indice) && (stock[prod - 1] > 0)) {
-		return true;
-	}
-	else {
-		return false;
-	}
+//* ====> Productos
 
-}
+const prodContainer = document.getElementById("prod_Container");
 
-const listarProd = (vector) => {
-
-	let lista = "Su Compra fue de:\n";
-
-	if (vector[0] > 0) {
-
-		lista = lista + "\n    Mate diseño montaña: x" + vector[0];
-	}
-
-	if (vector[1] > 0) {
-
-		lista = lista + "\n    Mate diseño MapaMundi: x" + vector[1];
-	}
-
-	if (vector[2] > 0) {
-
-		lista = lista + "\n    Mate equipo de futbol: x" + vector[2];
-	}
-
-	if (vector[3] > 0) {
-
-		lista = lista + "\n    Mate Mandala: x" + vector[3];
-	}
-
-	return lista;
-}
-
-let continuar = true;                          	//Condicion de salida del ciclo
-let carrito = 0, prod, decision;               	//Variables enteras
-let vProductos = [1000, 1500, 2000, 1600];     	//Vector de precios de productos
-let vStock = [5, 2, 0, 7];							//Stock de productos
-let vContador = [];                            	//Contador de productos agregados al carrito
-
-vectorCero(vContador, 4);                       	//Inicia en cero el contenido del vector
-console.log("cantidad comprada:", vContador);
-
-
-const nombre = iniciarSesion();
-
-while (continuar === true) {
-
-	do {
-		prod = parseInt(prompt(`Seleccione un producto para agregar al carrito:\n    1.Mate diseño montaña\n    2.Mate diseño MapaMundi\n    3.Mate equipo de futbol\n    4.Mate Mandala`));
-
-		if (validarProd(prod, vStock, 4)) {
-
-			carrito += vProductos[prod - 1];
-			vContador[prod - 1] = vContador[prod - 1] + 1;
-			vStock[prod - 1] = vStock[prod - 1] - 1;
-
-			console.log("cantidad comprada:", vContador);
-			console.log("stock:", vStock);
-		}
-		else {
-			alert("No tenemos ese producto!");
-
-			do {
-				decision = parseInt(prompt(nombre + ", Desea seguir comprando?\n    1=Si;\n    2=No"))
-
-				if (decision != 2 && decision != 1) {
-					alert("No entendi tu respuesta!")
-				}
-
-			} while (decision != 2 && decision != 1);
-
-			if (decision === 2) {
-				alert("Gracias!, Vuelvas prontos ;D");
-				break;
-			}
-		}
-
-	} while (!validarProd(prod, vStock, 4));
-
-
-	alert(nombre + ", \n    Su Carrito vale: $" + carrito);
-
-	do {
-		decision = parseInt(prompt(nombre + ", Desea seguir comprando?\n    1=Si;\n    2=No"))
-
-		if (decision != 2 && decision != 1) {
-			alert("No entendi tu respuesta!")
-		}
-
-	} while (decision != 2 && decision != 1);
-
-	if (decision === 2) {
-		continuar = false;
-	}
-}
-
-alert(nombre + ",\nGracias por su compra!\n" + listarProd(vContador) + "\n\nEl Total fue de: $" + carrito);
-*/
+prodContainer.innerHTML = `
+	<div class="prod_Card">	
+		<div>
+			<h3>${prod1.title}</h3>
+		</div>
+		
+		<div>
+			<img src="./images/hormiguita.png" alt="Imagen del producto">
+		</div>
+		
+		<div>
+			<p>${prod2.desc}</p>
+		</div>
+		
+		<div>
+			<span>Precio: $${prod1.price}</span>
+			<span><br>Aun quedan: ${prod1.stock}</span>
+		</div>
+		
+		<button id="prodBtn" class="btn_solid">
+			Agregar al Carrito
+		</button>
+	</div>`

@@ -49,6 +49,7 @@ html body .btn_solid {
   color: #ffffff;
   border-radius: 5px;
   font-weight: bold;
+  padding: 0.5rem;
 }
 html body .btn_solid:hover,
 html body .btn_solid:focus {
@@ -68,6 +69,39 @@ html body .btn_clear:focus span,
 html body .btn_clear:hover span {
   box-shadow: 0 0 5px #ffffff;
 }
+html body #prod_Container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+html body #prod_Container .prod_Card {
+  min-height: max-content;
+  width: 20rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #293241;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+}
+html body #prod_Container .prod_Card div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+html body #prod_Container .prod_Card div img {
+  height: 200px;
+  width: 200px;
+  transition-duration: 0.4s;
+}
+html body #prod_Container .prod_Card div img:hover {
+  box-shadow: 1px 1px 10px #000000;
+}
 
 .main_header .main_nav {
   position: fixed;
@@ -85,8 +119,9 @@ html body .btn_clear:hover span {
 .main_header .main_nav .nav_links {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 65%;
   height: 100vh;
+  min-width: min-content;
   padding-top: 30%;
   padding-left: 2rem;
   padding-right: 3.2rem;
@@ -97,11 +132,15 @@ html body .btn_clear:hover span {
   font-size: 2.4rem;
   text-decoration: none;
   font-weight: medium;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
   width: 100%;
   padding: 1.5rem 0;
   border-bottom: 1px solid black;
 }
 .main_header .main_nav .nav_links .link_item i {
+  display: block;
   font-size: 2.4rem;
   margin-right: 1rem;
 }
