@@ -115,7 +115,7 @@ const prodContainer = document.getElementById("prod_Container");
 PRODS.forEach(prod_ => {
 
 	prodContainer.innerHTML += `
-		<div class="prod_Card">	
+		<div id="prod${prod_.id}" class="prod_Card boxPointer">	
 			<div>
 				<h3>${prod_.title}</h3>
 			</div>
@@ -133,7 +133,7 @@ PRODS.forEach(prod_ => {
 				<span><br>Aun quedan: ${prod_.stock}</span>
 			</div>
 			
-			<button id="prodBtn" class="btn_solid">
+			<button id="prodBtn${prod_.id}" class="btn_solid">
 				Agregar al Carrito
 			</button>
 		</div>

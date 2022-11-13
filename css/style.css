@@ -20,7 +20,6 @@ html body {
 }
 html body main {
   min-height: min-content;
-  height: 700px;
   padding-bottom: 1rem;
   background-image: url("../images/montaña-izq.png"), url("../images/montaña-der.png");
   background-repeat: no-repeat;
@@ -69,17 +68,25 @@ html body .btn_clear:focus span,
 html body .btn_clear:hover span {
   box-shadow: 0 0 5px rgb(255, 255, 255);
 }
+html body .boxPointer {
+  transition: all linear 0.2s;
+}
+html body .boxPointer:hover,
+html body .boxPointer:focus {
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
 html body #prod_Container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 2rem;
 }
 html body #prod_Container .prod_Card {
   min-height: max-content;
-  width: 20rem;
+  width: min-content;
   padding: 1rem;
   margin: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 1px solid rgb(41, 50, 65);
   background-color: rgb(255, 255, 255);
   display: grid;
@@ -97,10 +104,11 @@ html body #prod_Container .prod_Card div {
 html body #prod_Container .prod_Card div img {
   height: 200px;
   width: 200px;
-  transition-duration: 0.4s;
+  transition: all linear 0.4s;
+  cursor: pointer;
 }
 html body #prod_Container .prod_Card div img:hover {
-  box-shadow: 1px 1px 10px rgb(0, 0, 0);
+  border: 1px solid rgb(41, 50, 65);
 }
 
 .main_header .main_nav {

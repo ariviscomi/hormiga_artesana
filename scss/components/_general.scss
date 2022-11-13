@@ -22,7 +22,6 @@ html{
 
         main{
             min-height: min-content;
-			height: 700px;
 
 			padding-bottom: 1rem;
 
@@ -81,17 +80,27 @@ html{
 			}
 		}
 
+		.boxPointer{
+			transition: all linear 0.2s;
+		}
+
+		.boxPointer:hover,
+		.boxPointer:focus{
+			box-shadow: 1px 1px 10px nth($paleta,5);
+		}
+		
 		#prod_Container{
 			display: flex;
+			justify-content: center;
 			flex-wrap: wrap;
 			padding: 2rem;		
 
 			.prod_Card{
 				min-height:max-content;
-				width: 20rem;
+				width: min-content;
 				padding: 1rem;
 				margin: 0.5rem;
-				border-radius: 1rem;
+				border-radius: 0.5rem;
 				border: 1px solid nth($paleta,4);
 				background-color: nth($paleta,1);
 	
@@ -112,11 +121,12 @@ html{
 					img{
 						height: 200px;
 						width: 200px;
-						transition-duration: 0.4s;
+						transition:all linear 0.4s;
+						cursor: pointer;
 					}
 	
 					img:hover{
-						box-shadow: 1px 1px 10px nth($paleta,5);
+						border: 1px solid nth($paleta,4);
 					}
 				}
 			}
