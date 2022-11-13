@@ -112,26 +112,30 @@ const us = logIn();
 
 const prodContainer = document.getElementById("prod_Container");
 
-prodContainer.innerHTML = `
-	<div class="prod_Card">	
-		<div>
-			<h3>${prod1.title}</h3>
+PRODS.forEach(prod_ => {
+
+	prodContainer.innerHTML += `
+		<div class="prod_Card">	
+			<div>
+				<h3>${prod_.title}</h3>
+			</div>
+			
+			<div>
+				<img src="./images/mate.jpg" alt="Imagen del producto">
+			</div>
+			
+			<div>
+				<p>${prod_.desc}</p>
+			</div>
+			
+			<div>
+				<span>Precio: $${prod_.price}</span>
+				<span><br>Aun quedan: ${prod_.stock}</span>
+			</div>
+			
+			<button id="prodBtn" class="btn_solid">
+				Agregar al Carrito
+			</button>
 		</div>
-		
-		<div>
-			<img src="./images/hormiguita.png" alt="Imagen del producto">
-		</div>
-		
-		<div>
-			<p>${prod2.desc}</p>
-		</div>
-		
-		<div>
-			<span>Precio: $${prod1.price}</span>
-			<span><br>Aun quedan: ${prod1.stock}</span>
-		</div>
-		
-		<button id="prodBtn" class="btn_solid">
-			Agregar al Carrito
-		</button>
-	</div>`
+	`
+})
