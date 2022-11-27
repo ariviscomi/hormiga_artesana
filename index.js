@@ -21,20 +21,24 @@ class user {
 	constructor(userName, userPassword, userCart) {
 		this.name = userName;
 		this.pass = userPassword;
-		this.cart = userCart;
-		this.saludo = function () { alert("Bienveni@\n            " + this.name) };
 	}
 }
 
-const user1 = new user("Florencia", "Flor.2022", 0);
-const user2 = new user("Ariel", "Contraseña123", 0);
-const user3 = new user("Profesor", "Coder123", 0);
+const singIn = document.getElementById("singIn")
 
-const USERS = [
-	user1,
-	user2,
-	user3
-];
+singIn.onclick = () =>{
+	let n = prompt("Ingresa tu usuario:")
+	let p = prompt("Ingresa contraseña:")
+	const Usuario = new user(n,p)
+
+	const usName = document.getElementsByClassName("usName")
+	let usMsg = document.getElementsByClassName("usMsg")
+	let usBtn = document.getElementsByClassName("usBtn")
+
+	usName[0].innerText = `Bienvenide ${Usuario.name} ♥`
+	usMsg[0].remove()
+	usBtn[0].remove()
+}
 
 class product {
 	constructor(id, title, image, description, price, stock) {
@@ -63,18 +67,7 @@ const PRODS = [
 	prod6
 ];
 
-const searchObj = (objList, element, attr) => {	//Buscar Objetos en una lista
-	let e, found = null;
-	for (let i = 0; i < objList.length; i++) {
-		e = objList[i];
-		if (element === e[attr]) {
-			found = e;
-			console.log(found);
-			break;
-		}
-	}
-	return found;
-}
+const singUp = document.getElementById("singUp")
 
 //* ====> Productos
 
