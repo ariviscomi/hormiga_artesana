@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta name="keywords"
-		content="store, tienda, mates, artesanias, madera, casero, diy, argentina, patagonia, bariloche,compra,venta,mirtha, reina, isabel, maradona, messi,acrilico,pintura, bombilla, yerba, hierba">
+		content="store, tienda, mates, artesanias, madera, casero, diy, argentina, patagonia, bariloche,compra,venta,mirtha, reina, isabel, maradona, messi,acrilico,pintura, bombilla, yerba, hierba,scaloneta">
 	<meta name="description" content="Hormiguita Artesana es el alter ego de la multidisciplinaria 
         Hormiga Viajera con el cual se dedica a crear y vender sus maravillosos articulos">
 
@@ -46,9 +46,28 @@
 				<span></span>
 				<span></span>
 			</button>
-
+			
 			<nav id="nav" class="main_nav">
+
+				<div id="userHead">
+					<div id="userSpace">
+						<img class="usImg" src="./images/usuario.png" alt="">
+						<h2 class="usName" alt="">
+							Bienvenide ♥
+						</h2>
+						<p class="usMsg">
+							Ingresa a tu cuenta para ver tus compras, favoritos, etc.
+						</p>
+						<div class="usBtn">
+							<button class="btn_solid">Ingresa</button>
+							<button class="btn_solid">Crea tu cuenta</button>
+						</div>
+					</div>
+				</div>
+
 				<div class="nav_links">
+					
+
 					<a class="link_item" href="index.html">
 
 						<i class="fi fi-rr-home"></i>
@@ -112,8 +131,7 @@
 				<i class="fi fi-sr-shopping-cart"></i>
 			</button>
 
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart"
-				aria-labelledby="offcanvasCartLabel">
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
 				<div class="offcanvas-header">
 					<h2 class="offcanvas-title" id="offcanvasCartLabel">
 						<i class="fi fi-sr-shopping-cart"></i>
@@ -135,7 +153,7 @@
 						<button class="btn btn_solid linkStyle" type="button">
 							Seguir Comprando
 						</button>
-						
+
 						<button class="btn btn_solid linkStyle" type="button">
 							Ir a Mi Carrito
 						</button>
@@ -146,6 +164,32 @@
 	</header>
 
 	<main>
+		<nav>
+			<div>
+				<div>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+						<button class="btn btn-outline-success" type="submit">Buscar</button>
+					</form>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
+					data-bs-toggle="dropdown" aria-expanded="false">
+					<span>
+						Ordenar
+					</span>
+					<i class="fi fi-rr-apps-sort"></i>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+					<li><a class="dropdown-item" href="#">Precio: Mas bajo a mas alto</a></li>
+					<li><a class="dropdown-item" href="#">Precio: Mas alto a mas bajo</a></li>
+					<li><a class="dropdown-item" href="#">Mas reciente primero</a></li>
+					<li><a class="dropdown-item" href="#">Mas antiguo primero</a></li>
+				</ul>
+			</div>
+		</nav>
+
 		<div id="prod_Container">
 
 		</div>
@@ -169,15 +213,12 @@
 		</div>
 	</footer>
 
-	<script 
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+			crossorigin="anonymous">
 	</script>
 
-	<script 
-		src="index.js">
-	</script>
+	<script src="index.js"></script>
 </body>
 
 </html>

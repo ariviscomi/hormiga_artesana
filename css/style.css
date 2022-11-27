@@ -16,7 +16,7 @@ html body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-family: "Roboto";
-  background-color: rgb(243, 232, 238);
+  background-color: #f3e8ee;
 }
 html body main {
   min-height: min-content;
@@ -27,15 +27,15 @@ html body main {
   background-size: contain;
 }
 html body header, html body footer {
-  background-color: rgb(41, 50, 65);
+  background-color: #293241;
 }
 html body .linkStyle a, html body .linkStyle i {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   text-decoration: none;
   border: none;
 }
 html body .linkStyle:hover {
-  text-shadow: 0 0 10px rgb(255, 255, 255);
+  text-shadow: 0 0 10px #ffffff;
   cursor: pointer;
 }
 html body .btn_clear {
@@ -44,36 +44,36 @@ html body .btn_clear {
   transition: all linear 0.4s;
 }
 html body .btn_solid {
-  background-color: rgb(167, 67, 58);
-  color: rgb(255, 255, 255);
+  background-color: #a7433a;
+  color: #ffffff;
   border-radius: 5px;
   font-weight: bold;
   padding: 0.5rem;
 }
 html body .btn_solid:hover,
 html body .btn_solid:focus {
-  box-shadow: 1px 1px 2px rgb(0, 0, 0);
+  box-shadow: 1px 1px 2px #000000;
 }
 html body .btn_solid:hover,
 html body .btn_solid:focus,
 html body .btn_clear:focus,
 html body .btn_clear:hover {
-  text-shadow: 0 0 10px rgb(255, 255, 255);
+  text-shadow: 0 0 10px #ffffff;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
 }
 html body .btn_solid:hover span,
 html body .btn_solid:focus span,
 html body .btn_clear:focus span,
 html body .btn_clear:hover span {
-  box-shadow: 0 0 5px rgb(255, 255, 255);
+  box-shadow: 0 0 5px #ffffff;
 }
 html body .boxPointer {
   transition: all linear 0.2s;
 }
 html body .boxPointer:hover,
 html body .boxPointer:focus {
-  box-shadow: 1px 1px 10px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px #000000;
 }
 html body #prod_Container {
   display: flex;
@@ -87,8 +87,8 @@ html body #prod_Container .prod_Card {
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
-  border: 1px solid rgb(41, 50, 65);
-  background-color: rgb(255, 255, 255);
+  border: 1px solid #293241;
+  background-color: #ffffff;
   display: grid;
   grid-template-rows: repeat(5, auto);
   justify-content: center;
@@ -108,7 +108,7 @@ html body #prod_Container .prod_Card div img {
   cursor: pointer;
 }
 html body #prod_Container .prod_Card div img:hover {
-  border: 1px solid rgb(41, 50, 65);
+  border: 1px solid #293241;
 }
 
 .main_header .main_nav {
@@ -124,16 +124,57 @@ html body #prod_Container .prod_Card div img:hover {
   transition: all 0.2s linear;
   background-color: transparent;
 }
+.main_header .main_nav #userHead {
+  height: 35vh;
+  width: 65%;
+  background-color: #a7433a;
+  display: flex;
+  align-items: flex-end;
+}
+.main_header .main_nav #userHead #userSpace {
+  height: min-content;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 10rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.5019607843);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "usimg usname" "usimg usmsg" "usimg usbtn";
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.main_header .main_nav #userHead #userSpace .usImg {
+  grid-area: usimg;
+  height: 64px;
+  width: 64px;
+}
+.main_header .main_nav #userHead #userSpace .usName {
+  grid-area: usname;
+  text-align: center;
+}
+.main_header .main_nav #userHead #userSpace .usMsg {
+  grid-area: usmsg;
+}
+.main_header .main_nav #userHead #userSpace .usBtn {
+  padding: 0.5rem;
+  text-align: center;
+  grid-area: usbtn;
+}
+.main_header .main_nav #userHead #userSpace .usBtn .btn_solid {
+  background-color: #f3e8ee;
+  color: #000000;
+}
 .main_header .main_nav .nav_links {
   display: flex;
   flex-direction: column;
   width: 65%;
-  height: 100vh;
+  height: 70vh;
   min-width: min-content;
-  padding-top: 30%;
   padding-left: 2rem;
   padding-right: 3.2rem;
-  background-color: rgb(41, 50, 65);
+  background-color: #293241;
 }
 .main_header .main_nav .nav_links .link_item {
   color: #ffffff;
@@ -154,7 +195,7 @@ html body #prod_Container .prod_Card div img:hover {
 }
 .main_header .main_nav .nav_links .link_item:hover,
 .main_header .main_nav .nav_links .link_item:focus {
-  text-shadow: 0 0 10px rgb(255, 255, 255);
+  text-shadow: 0 0 10px #ffffff;
 }
 .main_header .main_nav.show {
   margin-left: 0;
@@ -197,42 +238,11 @@ html body #prod_Container .prod_Card div img:hover {
   display: none;
 }
 
-/*
-@media screen and (min-width: 768px) {
-	.button-menu {
-		display: none;
-	}
-
-	.main-nav {
-		position: static;
-		margin-left: 0;
-		flex-basis: 70%;
-		height: 100%;
-	}
-
-	.nav-links {
-		width: 100%;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: flex-end;
-		background-color: mediumpurple;
-
-	}
-
-	.link-item {
-		display: inline-block;
-		margin-top: 0;
-		margin-right: 2rem;
-	}
-}
-
-*/
 header {
   height: max-content;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 1px 0 10px rgb(41, 50, 65);
+  box-shadow: 1px 0 10px #293241;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-areas: "hburger hlogo hcart";
@@ -249,7 +259,7 @@ header #head_logo img {
   transition: all linear 0.5s;
 }
 header #head_logo:hover img {
-  box-shadow: 0px 0px 10px rgba(167, 67, 58, 0.5019607843), 1px 1px 10px rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(167, 67, 58, 0.5019607843), 1px 1px 10px #ffffff;
 }
 header #head_burger {
   grid-area: hburger;
@@ -267,10 +277,10 @@ header #head_cart i {
   font-size: 3.2rem;
 }
 header #head_cart .offcanvas {
-  background-color: rgb(243, 232, 238);
+  background-color: #f3e8ee;
 }
 header #head_cart .offcanvas .offcanvas-header {
-  background-color: rgb(41, 50, 65);
+  background-color: #293241;
 }
 header #head_cart .offcanvas .offcanvas-header .btn_close {
   padding-right: 1.5rem;
@@ -285,7 +295,7 @@ header #head_cart .offcanvas .cart_footer {
 header #head_cart .offcanvas .cart_item {
   border: 1px solid rgba(167, 67, 58, 0.5019607843);
   min-height: 10rem;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -293,17 +303,17 @@ header #head_cart .offcanvas .cart_item {
   transition-duration: 0.2s;
 }
 header #head_cart .offcanvas .cart_item span {
-  color: rgb(0, 0, 0);
+  color: #000000;
   font-weight: bold;
   font-size: 2rem;
   text-shadow: 1px 1px 5px rgba(41, 50, 65, 0.5019607843);
 }
 header #head_cart .offcanvas .cart_item:hover,
 header #head_cart .offcanvas .cart_item:focus-visible {
-  box-shadow: 1px 1px 5px rgb(41, 50, 65);
+  box-shadow: 1px 1px 5px #293241;
 }
 header #head_cart .offcanvas i, header #head_cart .offcanvas span {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
 }
 header #head_cart .offcanvas .btn {
   min-width: min-content;
@@ -313,7 +323,7 @@ header #head_cart .offcanvas .btn {
   font-weight: normal;
 }
 header i {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: 2rem;
 }
 
@@ -325,7 +335,7 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   background-image: url("../images/hormiguita.png");
   background-repeat: no-repeat;
   background-position: right;
