@@ -36,6 +36,10 @@ html{
             background-color: nth($paleta, 4);
         }
 
+		li{
+			list-style: none;
+		}
+
 		.linkStyle{
 			a,i{
 				color:nth($paleta,1);
