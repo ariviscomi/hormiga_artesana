@@ -21,16 +21,63 @@ class user {
 	constructor(userName, userPassword, userCart) {
 		this.name = userName;
 		this.pass = userPassword;
+		this.cart = userCart
 	}
 }
 
-const singIn = document.getElementById("singIn")
+const user0 = new user("Ariel", "Contraseña","void");
+const user1 = new user("Profesor","Coder2022","void");
 
-singIn.onclick = () =>{
+const USERS = [
+	user0,
+	user1
+]
+
+const singInBtn = document.getElementById("singIn_btn")
+const mainIndex = document.getElementById("main_index")
+
+singInBtn.onclick = () =>{
+
+	mainIndex.innerHTML += `
+		<section id="singIn">
+			<div id="singIn_container">
+				<h2>
+					Iniciar Sesion
+				</h2>
+				<form method="get">
+					<ul id="form_contain">
+						<li>
+							<span>Tu mail:</span>
+							<input type="email" name="usmail" id="usmail">
+						</li>
+						<br>
+						<li>
+							<span>Tu contraseña:</span>
+							<input type="password" name="uspass" id="uspass">
+						</li>
+					</ul>
+					<div id="form_btn">
+						<input id="form_submit" class="btn_solid" type="submit" value="Entrar">
+						<input id="form_cancel" class="" type="button" value="Cancelar">
+					</div>
+				</form>
+			</div>
+		</section>
+	`
 	
-	let n = prompt("Ingresa tu usuario:")
-	let p = prompt("Ingresa contraseña:")
-	const Usuario = new user(n,p)
+	let submit = document.getElementById("form_submit")
+	let cancel = document.getElementById("form_cancel")
+
+	submit.onclick = () =>{
+/*
+		TODO: Funcion buscar elemento en lista que devuelva posicion de ese elemento
+		* Si se encuentra comparar la contraseña
+			! Si no coincide pedir de nuevo
+			? Si coincide entonces guardar el usuario en variable global
+		
+		*cambiar el nombre y foto de perfil por el del usuario
+*/
+	}
 
 	const usName = document.getElementsByClassName("usName")
 	let usMsg = document.getElementsByClassName("usMsg")
@@ -103,6 +150,8 @@ PRODS.forEach(prod_ => {
 })
 
 //* CARRITO
+
+//TODO: Cada usuario tiene asignado un carrito, para agregar productos primero debe iniciar sesion
 
 const Carrito = [];
 
