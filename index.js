@@ -27,6 +27,7 @@ class user {
 const singIn = document.getElementById("singIn")
 
 singIn.onclick = () =>{
+	
 	let n = prompt("Ingresa tu usuario:")
 	let p = prompt("Ingresa contraseña:")
 	const Usuario = new user(n,p)
