@@ -18,15 +18,16 @@ navWrapper.addEventListener("click", e => {
 //* ====> Objetos
 
 class user {
-	constructor(userName, userPassword, userCart) {
+	constructor(userId, userName, userPassword, userCart) {
+		this.id = userId;
 		this.name = userName;
 		this.pass = userPassword;
 		this.cart = userCart
 	}
 }
 
-const user0 = new user("Ariel", "Contraseña","void");
-const user1 = new user("Profesor","Coder2022","void");
+const user0 = new user(0,"Ariel", "hola","void");
+const user1 = new user(1,"Profesor","Coder2022","void");
 
 const USERS = [
 	user0,
@@ -44,48 +45,49 @@ singInBtn.onclick = () =>{
 				<h2>
 					Iniciar Sesion
 				</h2>
-				<form method="get">
+				<form id="singIn_form" method="get">
 					<ul id="form_contain">
 						<li>
-							<span>Tu mail:</span>
-							<input type="email" name="usmail" id="usmail">
+							<span>Tu usuario:</span>
+							<input type="text" name="usname" id="usname" placeholder="username">
 						</li>
 						<br>
 						<li>
 							<span>Tu contraseña:</span>
-							<input type="password" name="uspass" id="uspass">
+							<!-- <input type="password" name="uspass" id="uspass">-->
 						</li>
 					</ul>
 					<div id="form_btn">
 						<input id="form_submit" class="btn_solid" type="submit" value="Entrar">
-						<input id="form_cancel" class="" type="button" value="Cancelar">
+						<input id="form_cancel" class="btn_clear" type="button" value="Cancelar">
 					</div>
 				</form>
 			</div>
 		</section>
 	`
-	
-	let submit = document.getElementById("form_submit")
-	let cancel = document.getElementById("form_cancel")
 
-	submit.onclick = () =>{
-/*
-		TODO: Funcion buscar elemento en lista que devuelva posicion de ese elemento
-		* Si se encuentra comparar la contraseña
-			! Si no coincide pedir de nuevo
-			? Si coincide entonces guardar el usuario en variable global
-		
-		*cambiar el nombre y foto de perfil por el del usuario
-*/
+	let formsubmit = document.getElementById("form_submit")
+	let cancel = document.getElementById("form_cancel")
+	let singin = document.getElementById("singIn")
+
+	cancel.onclick = () =>{
+		singin.remove();
 	}
 
-	const usName = document.getElementsByClassName("usName")
-	let usMsg = document.getElementsByClassName("usMsg")
-	let usBtn = document.getElementsByClassName("usBtn")
+	formsubmit.onclick = () =>{
 
-	usName[0].innerText = `Bienvenide ${Usuario.name} ♥`
-	usMsg[0].remove()
-	usBtn[0].remove()
+		let input_username = document.getElementById("username")
+	//	let input_userpass = document.getElementById("userpass")
+
+		USERS.forEach(user_ => {
+			if(user_.name === input_username.value)
+			{
+				let USUARIO = JSON.stringify(user_)		
+				localStorage.setItem("USUARIO",USUARIO);
+				console.log(USUARIO)
+			}
+		})
+	}
 }
 
 class product {
@@ -150,9 +152,6 @@ PRODS.forEach(prod_ => {
 })
 
 //* CARRITO
-
-//TODO: Cada usuario tiene asignado un carrito, para agregar productos primero debe iniciar sesion
-
 const Carrito = [];
 
 const prodBtn = document.getElementById('prod1')
