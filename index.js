@@ -54,7 +54,7 @@ singInBtn.onclick = () =>{
 						<br>
 						<li>
 							<span>Tu contraseña:</span>
-							<!-- <input type="password" name="uspass" id="uspass">-->
+							<input type="password" name="uspass" id="uspass" placeholder="password">
 						</li>
 					</ul>
 					<div id="form_btn">
@@ -73,18 +73,21 @@ singInBtn.onclick = () =>{
 	cancel.onclick = () =>{
 		singin.remove();
 	}
+	
+	const input_username = document.getElementById("usname")
+	const input_userpass = document.getElementById("uspass")
 
+	
 	formsubmit.onclick = () =>{
-
-		let input_username = document.getElementById("username")
-	//	let input_userpass = document.getElementById("userpass")
-
+		
+		
 		USERS.forEach(user_ => {
-			if(user_.name === input_username.value)
+			if(user_.name === input_username.value && user_.pass === input_userpass)
 			{
 				let USUARIO = JSON.stringify(user_)		
 				localStorage.setItem("USUARIO",USUARIO);
 				console.log(USUARIO)
+				console.log(input_username.value)
 			}
 		})
 	}
@@ -144,7 +147,7 @@ PRODS.forEach(prod_ => {
 				<span><br>Aun quedan: ${prod_.stock}</span>
 			</div>
 			
-			<button id="prodBtn${prod_.id}" class="btn_solid">
+			<button id="prodBtn${prod_.id}" class="btn_solid prodBtn">
 				Agregar al Carrito
 			</button>
 		</div>
@@ -152,10 +155,11 @@ PRODS.forEach(prod_ => {
 })
 
 //* CARRITO
-const Carrito = [];
 
-const prodBtn = document.getElementById('prod1')
+let CART =[];
 
-prodBtn.onclick = () =>{
-	console.log("Producto agregado al carrito")
-}
+const prodBtn = document.getElementsByClassName('prodBtn')
+
+prodBtn.forEach(prod_ => {
+	console.log(prod_.id)
+})
