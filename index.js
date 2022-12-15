@@ -102,6 +102,10 @@ class product {
 		this.price = price;
 		this.stock = stock;
 	}
+	
+	addToCart(){
+		
+	}
 }
 
 const prod1 = new product(1, "Mate Montañas", "./images/montaña.jpeg","Mate de algarrobo con diseño de montañas", 500, 4);
@@ -157,9 +161,3 @@ PRODS.forEach(prod_ => {
 //* CARRITO
 
 let CART =[];
-
-const prodBtn = document.getElementsByClassName('prodBtn')
-
-prodBtn.forEach(prod_ => {
-	console.log(prod_.id)
-})
