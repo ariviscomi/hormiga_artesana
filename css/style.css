@@ -113,6 +113,10 @@ html body #prod_Container .prod_Card div img {
 html body #prod_Container .prod_Card div img:hover {
   border: 1px solid #293241;
 }
+html body #cart_item {
+  display: flex;
+  flex-direction: column;
+}
 
 .main_header .main_nav {
   position: fixed;

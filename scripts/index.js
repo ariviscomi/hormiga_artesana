@@ -127,3 +127,32 @@ PRODS.forEach(prod_ => {
 		console.log(CART)	
 	})
 });
+
+const btnCart = document.getElementById("btn_cart")
+const cartItem = document.getElementById("cart_item")
+
+btnCart.addEventListener("click",()=>{
+
+	if (CART.length == 0) {
+
+		cartItem.innerHTML = `
+		<span>Aun no hay nada en el carrito.</span>`
+
+	} else {
+
+		cartItem.innerHTML = "";
+		
+		CART.forEach((prod) => {
+			let prodCart = document.createElement("div")
+			prodCart.className = "prodCart"
+			prodCart.innerHTML = `
+				<img src="${prod.img}"></img>
+				<span>${prod.title}</span>
+				<span>$ ${prod.price}</span>
+			`
+
+			cartItem.append(prodCart);
+		})
+	}
+
+})

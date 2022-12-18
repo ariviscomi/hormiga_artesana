@@ -136,5 +136,10 @@ html{
 				}
 			}
 		}
+
+		#cart_item{
+			display: flex;
+			flex-direction: column;
+		}
     }
 }

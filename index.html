@@ -126,7 +126,7 @@
 
 		<div id="head_cart" class="head_cart">
 
-			<button class="btn btn_clear" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+			<button id="btn_cart" class="btn btn_clear" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
 				aria-controls="offcanvasCart">
 				<i class="fi fi-sr-shopping-cart"></i>
 			</button>
@@ -143,11 +143,9 @@
 						<i class="fi fi-rr-cross"></i>
 					</button>
 				</div>
-				<div class="offcanvas-body">
-					<div class="cart_item">
-						<span id="void-carrito">
-							Aun no hay nada en el carrito.
-						</span>
+				<div id="cart_container" class="offcanvas-body">
+					<div id="cart_item" class="cart_item">
+
 					</div>
 					<div class="cart_footer mt-3">
 						<button class="btn btn_solid linkStyle" type="button">
