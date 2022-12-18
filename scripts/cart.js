@@ -1,4 +1,0 @@
-
-//* CARRITO
-
-let CART =[];

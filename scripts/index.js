@@ -79,9 +79,11 @@ singInBtn.onclick = () =>{
 const singUp = document.getElementById("singUp")
 */
 
-const prodContainer = document.getElementById("prod_Container");
+//* ====> CARRITO
 
 let CART = [];
+
+const prodContainer = document.getElementById("prod_Container");
 
 PRODS.forEach(prod_ => {
 
@@ -113,15 +115,15 @@ PRODS.forEach(prod_ => {
 
 	prodContainer.append(content) 
 
-	prodBtn.onclick = () => {
+	prodBtn.addEventListener("click",() =>{
 		CART.push({
 			id: prod_.id,
 			title: prod_.title,
 			img: prod_.img,
 			desc: prod_.desc,
 			price: prod_.price
+			
 		})
-	}
-})
-
-console.log(CART)
+		console.log(CART)	
+	})
+});
