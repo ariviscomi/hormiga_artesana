@@ -85,32 +85,33 @@ let CART = [];
 
 PRODS.forEach(prod_ => {
 
-	prodContainer.innerHTML += `
-		<div id="prod${prod_.id}" class="prod_Card boxPointer">	
-			<div>
-				<h3>${prod_.title}</h3>
-			</div>
-			
-			<div>
-				<img src="${prod_.img}">
-			</div>
-			
-			<div>
-				<p>${prod_.desc}</p>
-			</div>
-			
-			<div>
-				<span>Precio: $${prod_.price}</span>
-				<span><br>Aun quedan: ${prod_.stock}</span>
-			</div>
-			
-			<button id="prodBtn" class="btn_solid prodBtn">
-				Agregar al Carrito
-			</button>
+	let content = document.createElement("div")
+	content.className = "prod_Card boxPointer"
+	content.innerHTML = `
+		<div>
+			<h3>${prod_.title}</h3>
 		</div>
-	`
+		
+		<div>
+			<img src="${prod_.img}">
+		</div>
+		
+		<div>
+			<p>${prod_.desc}</p>
+		</div>
+		
+		<div>
+			<span>Precio: $${prod_.price}</span>
+			<span><br>Aun quedan: ${prod_.stock}</span>
+		</div>`
 
-	let prodBtn = document.getElementById("prodBtn");
+		const prodBtn = document.createElement("button")
+		prodBtn.innerText = "Agregar al Carrito";
+		prodBtn.className = "btn_solid";
+	
+		content.append(prodBtn);
+
+	prodContainer.append(content) 
 
 	prodBtn.onclick = () => {
 		CART.push({
@@ -122,8 +123,5 @@ PRODS.forEach(prod_ => {
 		})
 	}
 })
-
-let boton = document.createElement("button")
-boton.innerText = "BOTON"
 
 console.log(CART)
