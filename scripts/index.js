@@ -124,7 +124,8 @@ PRODS.forEach(prod_ => {
 			price: prod_.price
 			
 		})
-		console.log(CART)	
+		console.log(CART)
+		localStorage.setItem("CART",JSON.stringify(CART))
 	})
 });
 
@@ -133,7 +134,9 @@ const cartItem = document.getElementById("cart_item")
 
 btnCart.addEventListener("click",()=>{
 
-	if (CART.length == 0) {
+	const CART_ = JSON.parse(localStorage.getItem("CART"));
+
+	if (CART_ == undefined) {
 
 		cartItem.innerHTML = `
 		<span>Aun no hay nada en el carrito.</span>`
@@ -142,16 +145,22 @@ btnCart.addEventListener("click",()=>{
 
 		cartItem.innerHTML = "";
 		
-		CART.forEach((prod) => {
+		CART_.forEach((prod) => {
 			let prodCart = document.createElement("div")
 			prodCart.className = "prodCart"
 			prodCart.innerHTML = `
-				<img src="${prod.img}"></img>
-				<span>${prod.title}</span>
-				<span>$ ${prod.price}</span>
+				<div class="cartImg">
+					<img src="${prod.img}"></img>
+				</div>
+				<div class="cartTitle">
+					<span>${prod.title}</span>
+				</div>
+				<div class="cartPrice">
+					<span>$ ${prod.price}</span>
+				</div>
 			`
-
 			cartItem.append(prodCart);
+
 		})
 	}
 

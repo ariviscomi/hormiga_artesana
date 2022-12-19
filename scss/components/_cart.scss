@@ -10,6 +10,8 @@
 		align-items: center;
 		flex-wrap: nowrap;
 
+		border-bottom: 1px solid nth($paleta,4);
+
 		img{
 			width: 6.4rem;
 		}
