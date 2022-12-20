@@ -131,6 +131,7 @@ PRODS.forEach(prod_ => {
 
 const btnCart = document.getElementById("btn_cart")
 const cartItem = document.getElementById("cart_item")
+const cartFooter = document.getElementById("cart_footer")
 
 btnCart.addEventListener("click",()=>{
 
@@ -142,8 +143,9 @@ btnCart.addEventListener("click",()=>{
 		<span>Aun no hay nada en el carrito.</span>`
 
 	} else {
-
+		let total = 0;
 		cartItem.innerHTML = "";
+		cartFooter.innerHTML = "";
 		
 		CART_.forEach((prod) => {
 			let prodCart = document.createElement("div")
@@ -160,7 +162,29 @@ btnCart.addEventListener("click",()=>{
 				</div>
 			`
 			cartItem.append(prodCart);
+			total += prod.price;
+		})
 
+		let btnFinish = document.createElement("button");
+		btnFinish.className = "btn btn_solid linkStyle";
+		btnFinish.innerHTML = `
+			<i class="fi fi-rr-shopping-cart"></i>
+			Realizar Compra
+		`;
+
+		let totalDiv = document.createElement("div")
+		totalDiv.innerHTML = `
+			<h2>Tu Carrito vale: $${total}</h2>
+		`;
+
+		cartFooter.append(totalDiv,btnFinish);
+
+		btnFinish.addEventListener("click", () =>{
+			localStorage.removeItem("CART");
+			cartItem.innerHTML = `
+				<span>Aun no hay nada en el carrito.</span>`;
+			cartFooter.innerHTML = "";
+			swal("Listo!", "Gracias por tu compra UwU", "success");
 		})
 	}
 

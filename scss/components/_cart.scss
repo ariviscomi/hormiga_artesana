@@ -1,8 +1,11 @@
 .cart_item{
-
+	display: flex;
+	flex-direction: column;
+	
 	.prodCart{
 		width: 90%;
-		padding: 0 0.2rem;
+		padding: 1rem 0.2rem;
+		margin: 1rem 0;
 
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
@@ -16,4 +19,8 @@
 			width: 6.4rem;
 		}
 	}
+}
+
+.cart_footer{
+	text-align: center;
 }
