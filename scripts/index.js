@@ -15,74 +15,13 @@ navWrapper.addEventListener("click", e => {
 	}
 });
 
-/* Inicio de sesion. Aun no esta habilitado
-
-const singInBtn = document.getElementById("singIn_btn")
-const mainIndex = document.getElementById("main_index")
-
-singInBtn.onclick = () =>{
-
-	mainIndex.innerHTML += `
-		<section id="singIn">
-			<div id="singIn_container">
-				<h2>
-					Iniciar Sesion
-				</h2>
-				<form id="singIn_form" method="get">
-					<ul id="form_contain">
-						<li>
-							<span>Tu usuario:</span>
-							<input type="text" name="usname" id="usname" placeholder="username">
-						</li>
-						<br>
-						<li>
-							<span>Tu contraseña:</span>
-							<input type="password" name="uspass" id="uspass" placeholder="password">
-						</li>
-					</ul>
-					<div id="form_btn">
-						<input id="form_submit" class="btn_solid" type="submit" value="Entrar">
-						<input id="form_cancel" class="btn_clear" type="button" value="Cancelar">
-					</div>
-				</form>
-			</div>
-		</section>
-	`
-
-	let formsubmit = document.getElementById("form_submit")
-	let cancel = document.getElementById("form_cancel")
-	let singin = document.getElementById("singIn")
-
-	cancel.onclick = () =>{
-		singin.remove();
-	}
-	
-	const input_username = document.getElementById("usname")
-	const input_userpass = document.getElementById("uspass")
-
-	
-	formsubmit.onclick = () =>{
-		
-		
-		USERS.forEach(user_ => {
-			if(user_.name === input_username.value && user_.pass === input_userpass)
-			{
-				let USUARIO = JSON.stringify(user_)		
-				localStorage.setItem("USUARIO",USUARIO);
-				console.log(USUARIO)
-				console.log(input_username.value)
-			}
-		})
-	}
-}
-
-const singUp = document.getElementById("singUp")
-*/
+//TODO ====> INICIO DE SESION
 
 //* ====> CARRITO
 
 let CART = [];
 
+const btnCart = document.getElementById("btn_cart")
 const prodContainer = document.getElementById("prod_Container");
 
 PRODS.forEach(prod_ => {
@@ -92,48 +31,52 @@ PRODS.forEach(prod_ => {
 	content.innerHTML = `
 		<div>
 			<h3>${prod_.title}</h3>
-		</div>
-		
-		<div>
+			</div>
+			
+			<div>
 			<img src="${prod_.img}">
-		</div>
-		
-		<div>
+			</div>
+			
+			<div>
 			<p>${prod_.desc}</p>
-		</div>
-		
-		<div>
+			</div>
+			
+			<div>
 			<span>Precio: $${prod_.price}</span>
 			<span><br>Aun quedan: ${prod_.stock}</span>
-		</div>`
+			</div>`
 
-		const prodBtn = document.createElement("button")
-		prodBtn.innerText = "Agregar al Carrito";
-		prodBtn.className = "btn_solid";
-	
-		content.append(prodBtn);
+	const prodBtn = document.createElement("button")
+	prodBtn.innerText = "Agregar al Carrito";
+	prodBtn.className = "btn_solid";
 
-	prodContainer.append(content) 
+	content.append(prodBtn);
 
-	prodBtn.addEventListener("click",() =>{
+	prodContainer.append(content)
+
+	prodBtn.addEventListener("click", () => {
 		CART.push({
 			id: prod_.id,
 			title: prod_.title,
 			img: prod_.img,
 			desc: prod_.desc,
-			price: prod_.price
-			
-		})
+			price: prod_.price,
+			stock: prod_.stock
+		});
+		
 		console.log(CART)
-		localStorage.setItem("CART",JSON.stringify(CART))
+		
+		let cartCont = document.getElementById("cartcont");
+		if(CART.length){cartCont.innerText = `${CART.length}`}else{cartCont.remove();}
+
+		localStorage.setItem("CART", JSON.stringify(CART))
 	})
 });
 
-const btnCart = document.getElementById("btn_cart")
 const cartItem = document.getElementById("cart_item")
 const cartFooter = document.getElementById("cart_footer")
 
-btnCart.addEventListener("click",()=>{
+btnCart.addEventListener("click", () => {
 
 	const CART_ = JSON.parse(localStorage.getItem("CART"));
 
@@ -146,7 +89,7 @@ btnCart.addEventListener("click",()=>{
 		let total = 0;
 		cartItem.innerHTML = "";
 		cartFooter.innerHTML = "";
-		
+
 		CART_.forEach((prod) => {
 			let prodCart = document.createElement("div")
 			prodCart.className = "prodCart"
@@ -177,9 +120,9 @@ btnCart.addEventListener("click",()=>{
 			<h2>Tu Carrito vale: $${total}</h2>
 		`;
 
-		cartFooter.append(totalDiv,btnFinish);
+		cartFooter.append(totalDiv, btnFinish);
 
-		btnFinish.addEventListener("click", () =>{
+		btnFinish.addEventListener("click", () => {
 			localStorage.removeItem("CART");
 			cartItem.innerHTML = `
 				<span>Aun no hay nada en el carrito.</span>`;

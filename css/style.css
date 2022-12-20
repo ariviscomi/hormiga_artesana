@@ -55,6 +55,14 @@ html body header, html body footer {
 html body li {
   list-style: none;
 }
+html body .cartcont {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #a7433a;
+  color: #ffffff;
+  font-size: 2rem;
+}
 html body .linkStyle a, html body .linkStyle i {
   color: #ffffff;
   text-decoration: none;

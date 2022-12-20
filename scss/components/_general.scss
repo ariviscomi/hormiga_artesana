@@ -40,6 +40,15 @@ html{
 			list-style: none;
 		}
 
+		.cartcont{
+			width: 1rem;
+			height: 1rem;
+			border-radius: 50%;
+			background-color: nth($paleta,3);
+			color: nth($paleta,1);
+			font-size: 2rem;
+		}
+
 		.linkStyle{
 			a,i{
 				color:nth($paleta,1);
@@ -58,6 +67,8 @@ html{
 			border: none;
 
 			transition: all linear 0.4s;
+
+			
 		}
 
 		.btn_solid{
